@@ -1,7 +1,7 @@
 {
   "name": "openscraping-api-server",
-  "version": "0.0.5",
-  "description": "The OpenScraping API server allows using the OpenScraping Node.js library to extract information from HTML pages using a JSON config file with xPath rules.",
+  "version": "0.0.6",
+  "description": "The OpenScraping API server allows calling the OpenScraping Node.js library through an HTTP API to extract information from HTML pages using a JSON config file with xPath rules.",
   "main": "index.js",
   "repository": {
     "type": "git",
