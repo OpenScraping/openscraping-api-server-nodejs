@@ -61,9 +61,9 @@ router.post("/evaluate", function(req, res) {
 })
 
 app.use("/api", router)
-app.use("/static/jsoneditor", express.static("./node_modules/jsoneditor/dist"))
-app.use("/static/jquery", express.static("./node_modules/jquery/dist"))
-app.use("/static/ace", express.static("./node_modules/ace-builds/src-noconflict"))
+app.use("/static/jsoneditor", express.static(__dirname + "/node_modules/jsoneditor/dist"))
+app.use("/static/jquery", express.static(__dirname + "/node_modules/jquery/dist"))
+app.use("/static/ace", express.static(__dirname + "/node_modules/ace-builds/src-noconflict"))
 app.use("/", staticFile(__dirname + "/index.html", {}))
 
 app.listen(port)
