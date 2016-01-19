@@ -138,8 +138,7 @@
           alert("Please fill in a URL")
         } else {
           $.get("api/proxy?url=" + encodeURIComponent(url), function(data) {
-            //$("#html").val(data)
-            htmlEditor.setValue(data)
+            htmlEditor.setValue(data, -1)
           })
           .fail(function(err) {
             alert("Could not download the URL: " + url + " " + JSON.stringify(err))
@@ -157,7 +156,6 @@
         return;
       }
       
-      //var html = $("#html").val()
       var html = htmlEditor.getValue()
       var requestJson = JSON.stringify({ config: JSON.stringify(config), html: html })
       
@@ -178,7 +176,7 @@
     htmlEditor.setTheme("ace/theme/chrome")
     htmlEditor.getSession().setMode("ace/mode/html")
     htmlEditor.getSession().setUseWrapMode(true)
-    htmlEditor.setValue("<html> <body> <h1>Article title</h1> <div class=\"article\">Article contents</div> </body> </html>")
+    htmlEditor.setValue("<html> <body> <h1>Article title</h1> <div class=\"article\">Article contents</div> </body> </html>", -1)
   })
 </script>
 </body>
