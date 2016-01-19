@@ -5,7 +5,10 @@ var bodyParser = require("body-parser")
 var request = require("request")
 var openscraping = require("openscraping")
 
-app.use(bodyParser.text({type: '*/*'}))
+app.use(bodyParser.text({
+  type: "*/*",
+  limit: "5mb"
+}))
 
 var port = process.env.PORT || 8080
 
@@ -34,7 +37,6 @@ router.get("/evaluate", function(req, res) {
 })
 
 router.post("/evaluate", function(req, res) {
-  
   if (req.body) {
     try {
       var postData = JSON.parse(req.body)
@@ -61,6 +63,7 @@ router.post("/evaluate", function(req, res) {
 app.use("/api", router)
 app.use("/static/jsoneditor", express.static("./node_modules/jsoneditor/dist"))
 app.use("/static/jquery", express.static("./node_modules/jquery/dist"))
+app.use("/static/ace", express.static("./node_modules/ace-builds/src-noconflict"))
 app.use("/", staticFile(__dirname + "/index.html", {}))
 
 app.listen(port)

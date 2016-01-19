@@ -90,9 +90,12 @@
         <tr id="download_row">
           <td id="download_row_left"><input type="text" name="url" id="url" placeholder="Paste URL to use for downloading HTML here"></td>
           <td id="download_row_right"><input type="button" id="download" value="Download HTML"></td>
-        </tr id="html">
+        </tr>
         <tr id="html_row">
-          <td colspan="2"><textarea id="html">&lt;html&gt;&lt;body&gt;&lt;h1&gt;Article title&lt;/h1&gt;&lt;div class="article"&gt;Article contents&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</textarea></td>
+          <td colspan="2">
+            <div id="html" style="width: 100%; height: 100%;">
+            </div>
+          </td>
         </tr>
         <tr id="process_row">
           <td colspan="2"><input type="button" id="evaluate" value="Apply rules on the left to HTML above to generate the results below"></td>
@@ -135,7 +138,8 @@
           alert("Please fill in a URL")
         } else {
           $.get("api/proxy?url=" + encodeURIComponent(url), function(data) {
-            $("#html").val(data)
+            //$("#html").val(data)
+            htmlEditor.setValue(data)
           })
           .fail(function(err) {
             alert("Could not download the URL: " + url + " " + JSON.stringify(err))
@@ -153,7 +157,8 @@
         return;
       }
       
-      var html = $("#html").val()
+      //var html = $("#html").val()
+      var html = htmlEditor.getValue()
       var requestJson = JSON.stringify({ config: JSON.stringify(config), html: html })
       
       $.post({
@@ -167,6 +172,13 @@
         }
       })
     })
+    
+    var htmlEditor = ace.edit("html")
+    ace.config.set('basePath', 'static/ace');
+    htmlEditor.setTheme("ace/theme/chrome")
+    htmlEditor.getSession().setMode("ace/mode/html")
+    htmlEditor.getSession().setUseWrapMode(true)
+    htmlEditor.setValue("<html> <body> <h1>Article title</h1> <div class=\"article\">Article contents</div> </body> </html>")
   })
 </script>
 </body>
