@@ -17,3 +17,23 @@ node node_modules/openscraping-api-server/index.js
 
 Now go to [http://localhost:8080/](http://localhost:8080/) to see the test console:
 <p align="center"><img src='http://i.imgur.com/AvpwGCK.jpg' alt='OpenScraping API Server Test Console' width='870'></p>
+
+### Accessing the API Server programatically
+
+Below is sample code that assumes you have jQuery available and loaded. It should be straighforward to access the API from any other language.
+
+```javascript
+// Config containts the JSON config (as string!), and html contains the HTML of the pages we are scraping
+var requestJson = JSON.stringify({ config: config, html: html })
+
+$.post({
+  url: "http://localhost:8080/api/evaluate",
+  data: requestJson,
+  success: function (data) {
+    console.log(data)
+  },
+  error: function (err) {
+    console.log(err)
+  }
+})
+```
