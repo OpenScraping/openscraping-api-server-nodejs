@@ -4,6 +4,7 @@ var staticFile = require("connect-static-file")
 var bodyParser = require("body-parser")
 var request = require("request")
 var openscraping = require("openscraping")
+var path = require("path")
 
 app.use(bodyParser.text({
   type: "*/*",
@@ -61,10 +62,10 @@ router.post("/evaluate", function(req, res) {
 })
 
 app.use("/api", router)
-app.use("/static/jsoneditor", express.static(__dirname + "/node_modules/jsoneditor/dist"))
-app.use("/static/jquery", express.static(__dirname + "/node_modules/jquery/dist"))
-app.use("/static/ace", express.static(__dirname + "/node_modules/ace-builds/src-noconflict"))
-app.use("/", staticFile(__dirname + "/index.html", {}))
+app.use("/static/jsoneditor", express.static(path.join(__dirname, "/node_modules/jsoneditor/dist")))
+app.use("/static/jquery", express.static(path.join(__dirname, "/node_modules/jquery/dist")))
+app.use("/static/ace", express.static(path.join(__dirname, "/node_modules/ace-builds/src-noconflict")))
+app.use("/", staticFile(path.join(__dirname, "/index.html"), {}))
 
 app.listen(port)
 console.log("Running on port " + port)
