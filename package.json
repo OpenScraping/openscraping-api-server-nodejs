@@ -1,11 +1,11 @@
 {
-  "name": "openscraping-api",
-  "version": "0.0.2",
+  "name": "openscraping-api-server",
+  "version": "0.0.3",
   "description": "The OpenScraping API server allows using the OpenScraping Node.js library to extract information from HTML pages using a JSON config file with xPath rules.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zmarty/openscraping-api-nodejs"
+    "url": "https://github.com/zmarty/openscraping-api-server-nodejs"
   },
   "author": "Ovidiu Dan <contact@ovidiudan.com> (https://www.ovidiudan.com/)",
   "license": "ISC",
