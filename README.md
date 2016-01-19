@@ -8,6 +8,8 @@ The server provides two features:
 
 **The server does not contain a crawler**, it just runs rules on a JSON config and HTML file sent in through an HTTP POST.
 
+Please see the [OpenScraping Node.js library](https://github.com/zmarty/openscraping-lib-nodejs/) for more detailed documentation on the JSON config.
+
 ### Getting started
 
 Install and run the API server:
