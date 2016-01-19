@@ -18,7 +18,7 @@ node node_modules/openscraping-api-server/index.js
 Now go to [http://localhost:8080/](http://localhost:8080/) to see the test console:
 <p align="center"><img src='http://i.imgur.com/AvpwGCK.jpg' alt='OpenScraping API Server Test Console' width='870'></p>
 
-**Warning**: Do not expose this API externally, at it contains a proxy accessible at /api/proxy that can download any HTML accessible from your machine.
+**Warning**: Do not expose this API externally, as it contains a proxy accessible at /api/proxy that can download any HTML accessible from your machine.
 
 ### Accessing the API Server programatically
 
