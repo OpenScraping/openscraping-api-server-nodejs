@@ -22,7 +22,15 @@ node node_modules/openscraping-api-server/index.js --port 8080 --start api --sta
 Now go to [http://localhost:8080/](http://localhost:8080/) to see the test console:
 <p align="center"><img src='http://i.imgur.com/AvpwGCK.jpg' alt='OpenScraping API Server Test Console' width='870'></p>
 
-**Warning**: Do not expose this API externally, as it contains a proxy accessible at /api/proxy that can download any HTML accessible from your machine.
+### Available components
+
+In the *Getting Started* section above we used --start command line arguments to start the three available components. You do not need to start all of them, especially in production. Here is what these components do:
+
+Component | Dependency | Description
+--------- | ---------- | -------
+api       | -          | This component runs the actual HTTP API that makes use of the [OpenScraping Node.js library](https://github.com/OpenScraping/openscraping-lib-nodejs/). See the *Accessing the API Server programatically* section below on how to use the API.
+proxy     | api        | The proxy is used by the rules_ux component to download single HTML pages when users click the *Download HTML* page in the UX. **Warning**: Do not expose this server externally on the Internet when the proxy component is turned on. It could be used maliciously because it can download any HTML page accessible from the machine this server is running on. 
+rules_ux  | api, proxy | This component provides the UX (see screenshot above) that allows for quick testing and development of new xPath rules against HTML pages.
 
 ### Accessing the API Server programatically
 
