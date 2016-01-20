@@ -1,6 +1,6 @@
 ## OpenScraping API Server
 
-The OpenScraping API server allows calling the [OpenScraping Node.js library](https://github.com/zmarty/openscraping-lib-nodejs/) through an HTTP API to extract information from HTML pages using a JSON config file with xPath rules.
+The OpenScraping API server allows calling the [OpenScraping Node.js library](https://github.com/OpenScraping/openscraping-lib-nodejs/) through an HTTP API to extract information from HTML pages using a JSON config file with xPath rules.
 
 The server provides two features:
 * A JSON HTTP API that allows sending in a JSON config and an HTML page and getting back the extracted data.
@@ -8,7 +8,7 @@ The server provides two features:
 
 **The server does not contain a crawler**, it just runs rules on a JSON config and HTML file sent in through an HTTP POST.
 
-Please see the [OpenScraping Node.js library](https://github.com/zmarty/openscraping-lib-nodejs/) for more detailed documentation on the JSON config.
+Please see the [OpenScraping Node.js library](https://github.com/OpenScraping/openscraping-lib-nodejs/) for more detailed documentation on the JSON config.
 
 ### Getting started
 
