@@ -1,5 +1,7 @@
 ## OpenScraping API Server
 
+[![license:isc](https://img.shields.io/badge/license-isc-brightgreen.svg?style=flat-square)](https://github.com/OpenScraping/openscraping-api-server-nodejs/blob/master/LICENSE) [![Build Status](https://img.shields.io/travis/OpenScraping/openscraping-api-server-nodejs.svg?style=flat-square)](https://travis-ci.org/OpenScraping/openscraping-api-server-nodejs) [![npm package version](https://img.shields.io/npm/v/openscraping-api-server.svg?style=flat-square)](https://www.npmjs.com/package/openscraping-api-server) [![devDependencies:?](https://img.shields.io/david/OpenScraping/openscraping-api-server-nodejs.svg?style=flat-square)](https://david-dm.org/OpenScraping/openscraping-api-server-nodejs)
+
 The OpenScraping API server allows calling the [OpenScraping Node.js library](https://github.com/OpenScraping/openscraping-lib-nodejs/) through an HTTP API to extract information from HTML pages using a JSON config file with xPath rules.
 
 The server provides two features:
