@@ -16,7 +16,7 @@ Install and run the API server:
 
 ```
 npm install openscraping-api-server
-node node_modules/openscraping-api-server/index.js
+node node_modules/openscraping-api-server/index.js --port 8080 --start api --start proxy --start rules_ux
 ```
 
 Now go to [http://localhost:8080/](http://localhost:8080/) to see the test console:
