@@ -22,7 +22,7 @@ node node_modules/openscraping-api-server/index.js --port 8080 --start api --sta
 ```
 
 Now go to [http://localhost:8080/](http://localhost:8080/) to see the test console:
-<p align="center"><img src='http://i.imgur.com/AvpwGCK.jpg' alt='OpenScraping API Server Test Console' width='870'></p>
+<p align="center"><img src='http://i.imgur.com/MXzzuIM.jpg' alt='OpenScraping API Server Test Console' width='870'></p>
 
 ### Available components
 
